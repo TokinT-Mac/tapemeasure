@@ -13,3 +13,11 @@ def loadStats():
 
                 cpus[l[0]] = l[1:4]
     return cpus
+
+@app.route('/stat', methods=['GET'])
+def stat():
+    return json.jsonify(loadStats())
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
